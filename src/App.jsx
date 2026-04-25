@@ -10,8 +10,11 @@ export default function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <Navbar />
-        <main className="flex-1">
+        <main id="main-content" className="flex-1" tabIndex="-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

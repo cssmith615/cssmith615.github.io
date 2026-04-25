@@ -37,6 +37,7 @@ export default function ProjectCard({ name, type, stack, description, status, gi
           href={github}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`View ${name} on GitHub`}
           className="inline-flex items-center gap-1.5 text-sm font-medium text-[#10B981] hover:text-[#059669] transition-colors duration-150 mt-auto"
         >
           View on GitHub →

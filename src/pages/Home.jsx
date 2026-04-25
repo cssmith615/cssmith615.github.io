@@ -78,6 +78,7 @@ export default function Home() {
               </Link>
               <a
                 href="/resume.pdf"
+                download
                 className="px-6 py-3 rounded-lg border-2 border-[#1E293B] text-[#1E293B] font-semibold hover:border-[#10B981] hover:text-[#10B981] transition-colors duration-200"
               >
                 Download Resume

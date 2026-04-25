@@ -18,6 +18,19 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (!menuOpen) return undefined
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [menuOpen])
+
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-shadow duration-200 ${
@@ -30,6 +43,7 @@ export default function Navbar() {
           to="/"
           className="font-heading text-lg font-semibold text-[#1E293B] tracking-tight"
           style={{ fontFamily: "'Sora', sans-serif" }}
+          onClick={() => setMenuOpen(false)}
         >
           Charles Smith
         </NavLink>
@@ -53,7 +67,10 @@ export default function Navbar() {
             </NavLink>
           ))}
           <a
-            href="#resume"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
             className="ml-2 px-4 py-1.5 rounded text-sm font-semibold bg-[#1E293B] text-white hover:bg-[#10B981] transition-colors duration-150"
           >
             Resume
@@ -64,7 +81,10 @@ export default function Navbar() {
         <button
           className="md:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          type="button"
         >
           <span className={`block w-6 h-0.5 bg-[#1E293B] transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
           <span className={`block w-6 h-0.5 bg-[#1E293B] transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
@@ -74,7 +94,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-slate-200 px-6 pb-4 flex flex-col gap-3">
+        <div id="mobile-navigation" className="md:hidden bg-white border-t border-slate-200 px-6 pb-4 flex flex-col gap-3">
           {navLinks.map(({ to, label }) => (
             <NavLink
               key={to}
@@ -93,7 +113,10 @@ export default function Navbar() {
             </NavLink>
           ))}
           <a
-            href="#resume"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
             onClick={() => setMenuOpen(false)}
             className="mt-1 px-4 py-1.5 rounded text-sm font-semibold bg-[#1E293B] text-white text-center"
           >

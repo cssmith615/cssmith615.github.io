@@ -30,7 +30,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/charlessmith615"
+            href="https://www.linkedin.com/in/charles-smith-98874063/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 bg-white rounded-xl border border-slate-200 p-5 hover:border-[#10B981] hover:shadow-sm transition-all duration-150 group"
@@ -40,7 +40,7 @@ export default function Contact() {
             </div>
             <div>
               <p className="text-xs text-[#94A3B8] uppercase tracking-wide font-medium">LinkedIn</p>
-              <p className="text-[#1E293B] font-medium">linkedin.com/in/charlessmith615</p>
+              <p className="text-[#1E293B] font-medium">linkedin.com/in/charles-smith-98874063</p>
             </div>
           </a>
 
@@ -61,11 +61,11 @@ export default function Contact() {
 
           <div className="flex items-center gap-4 bg-white rounded-xl border border-slate-200 p-5">
             <div className="w-10 h-10 rounded-lg bg-[#F1F5F9] flex items-center justify-center text-[#1E293B] text-sm">
-              📍
+              TN
             </div>
             <div>
               <p className="text-xs text-[#94A3B8] uppercase tracking-wide font-medium">Location</p>
-              <p className="text-[#1E293B] font-medium">Oakland, TN (Memphis area)</p>
+              <p className="text-[#1E293B] font-medium">Memphis area, Tennessee</p>
             </div>
           </div>
         </div>
